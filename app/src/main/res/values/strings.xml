@@ -25,4 +25,9 @@
     <string name="welcome_text_two">Welcome from Shoe Store.</string>
     <string name="instruction_one">Instruction</string>
     <string name="instruction_two">Manage Shoe Store</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_company">Company</string>
+    <string name="hint_shoe_size">Shoe Size</string>
+    <string name="action_save">Save</string>
+    <string name="desc_floating_action">Add New Shoe</string>
 </resources>
