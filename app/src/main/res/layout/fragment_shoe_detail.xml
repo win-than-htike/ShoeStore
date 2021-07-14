@@ -31,6 +31,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
+                android:text="@={vm.title}"
+                android:textColor="@color/black"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -52,6 +54,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
+                android:text="@={vm.company}"
+                android:textColor="@color/black"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -73,6 +77,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
+                android:maxEms="2"
+                android:text="@={vm.shoeSize}"
+                android:textColor="@color/black"
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -84,7 +91,7 @@
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_16"
-            android:hint="@string/hint_shoe_size"
+            android:hint="@string/hint_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_shoe_size">
@@ -94,24 +101,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:inputType="number" />
+                android:text="@={vm.description}"
+                android:textColor="@color/black"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_save"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="@dimen/button_size"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_16"
-            android:layout_marginEnd="@dimen/margin_16"
-            android:layout_marginBottom="@dimen/margin_16"
-            android:text="@string/action_save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:onClick="@{(view) -> vm.addShoe()}"
+            android:text="@string/action_cancel"
+            app:layout_constraintEnd_toStartOf="@+id/btn_save"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_description"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@id/txt_description"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_8"
+            android:onClick="@{(view) -> vm.addShoe()}"
+            android:text="@string/action_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@id/txt_description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

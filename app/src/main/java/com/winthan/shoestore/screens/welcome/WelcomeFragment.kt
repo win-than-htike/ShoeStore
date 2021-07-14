@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.winthan.shoestore.R
@@ -15,9 +16,7 @@ import com.winthan.shoestore.databinding.FragmentWelcomeBinding
  * Use the [WelcomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class WelcomeFragment : Fragment(
-    R.layout.fragment_welcome
-) {
+class WelcomeFragment : Fragment() {
 
     private lateinit var binding: FragmentWelcomeBinding
 
@@ -26,9 +25,8 @@ class WelcomeFragment : Fragment(
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        return FragmentWelcomeBinding.inflate(inflater, container, false).also {
-            binding = it
-        }.root
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

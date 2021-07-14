@@ -17,7 +17,6 @@
     <string name="action_login">Login</string>
     <string name="action_register">Register</string>
     <string name="screen_welcome">Welcome</string>
-    <string name="screen_shoe_list">Shoe List</string>
     <string name="screen_instructions">Instructions</string>
     <string name="screen_shop_detail">Shop Detail</string>
     <string name="action_next">Next</string>
@@ -30,4 +29,7 @@
     <string name="hint_shoe_size">Shoe Size</string>
     <string name="action_save">Save</string>
     <string name="desc_floating_action">Add New Shoe</string>
+    <string name="hint_description">Description</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="screen_shoe_list">Shoe List</string>
 </resources>
