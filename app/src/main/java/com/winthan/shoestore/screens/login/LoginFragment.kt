@@ -53,7 +53,7 @@ class LoginFragment : Fragment(
         viewModel.loginEvent.observe(viewLifecycleOwner, {
             when (it) {
                 LoginEvent.Login -> {
-                    navigateToShoeList()
+                    navigateToWelcome()
                     viewModel.onFinishLogin()
                 }
                 LoginEvent.Register -> {
@@ -63,11 +63,6 @@ class LoginFragment : Fragment(
             }
         })
 
-    }
-
-    private fun navigateToShoeList() {
-        val action = LoginFragmentDirections.actionLoginFragmentToShoeListFragment()
-        findNavController().navigate(action)
     }
 
     private fun navigateToWelcome() {

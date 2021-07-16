@@ -1,10 +1,8 @@
 package com.winthan.shoestore.screens.shoelist
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -32,6 +30,7 @@ class ShoeListFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.vm = mainViewModel
+        setHasOptionsMenu(true)
 
         binding.fbAddNewShoe.setOnClickListener {
             navigateToShoeDetail()
@@ -42,6 +41,22 @@ class ShoeListFragment : Fragment() {
     private fun navigateToShoeDetail() {
         val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment()
         findNavController().navigate(action)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_main, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_logout -> logout()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun logout() {
+        findNavController().navigate(ShoeListFragmentDirections.actionShoelistingFragmentToLogin())
     }
 
 }
