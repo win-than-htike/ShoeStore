@@ -11,6 +11,7 @@
             type="com.winthan.shoestore.screens.main.MainViewModel" />
     </data>
 
+    <!-- For floating button I use coordinator layout because of layout behaviour -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

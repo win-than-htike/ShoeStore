@@ -9,6 +9,7 @@
             type="com.winthan.shoestore.screens.main.MainViewModel" />
     </data>
 
+    <!-- Reduce redundant view group for using constraint layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

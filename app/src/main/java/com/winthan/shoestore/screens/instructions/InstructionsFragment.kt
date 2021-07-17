@@ -23,7 +23,7 @@ class InstructionsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
+        binding = FragmentInstructionsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
